@@ -1,0 +1,59 @@
+h1 {
+    background-color: blue;
+    color: lightblue;
+    text-align: center;
+    margin: 0px;
+
+}
+
+body {
+    background-color: white;
+    padding: 0;
+    margin: 0;
+}
+
+h4 {
+    font-size: 30px;
+    margin: 0px;
+
+
+}
+
+a {
+    color: turquoise;
+
+}
+
+img {
+    margin-left: 20px;
+    float: left;
+    margin: 15px;
+    width: fit-content;
+    height: fit-content;
+}
+
+body {
+    margin: 0px;
+    background-color: teal;
+}
+
+.righty {
+    float: right;
+    padding: 15px;
+    margin: 0px;
+
+}
+
+.middley {
+    margin: 0px;
+    color: turquoise;
+    padding: 15px;
+    float: center;
+}
+
+.lefty {
+    margin: 0px;
+    color: turquoise;
+    padding: 15px;
+    float: left;
+}
