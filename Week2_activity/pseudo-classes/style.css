@@ -1,0 +1,16 @@
+a:link{
+    color: lightskyblue;
+
+}
+a:active{
+  color:orange;
+}
+
+a:hover{
+    color: limegreen;
+    background-color: #000;
+}
+a:focus{
+    color: orchid;
+
+}
