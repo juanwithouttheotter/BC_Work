@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Array Activity - Unsolved</title>
+  </head>
+  <body>
+
+    <h1>Open the console to see the magic!</h1>
+
+    <script type="text/javascript">
+
+      // Fill in the question marks with what the output will be.
+      var animals = ["parrot", "cat", "dog"];
+
+      // give me 3
+      console.log(animals.length);
+
+      // give me cat
+      console.log(animals[1]);
+
+      // give me dog
+      console.log(animals[2]);
+
+      // give me parrot
+      console.log(animals[0]);
+
+      // error. there is no animal 3
+      console.log(animals[animals.length]);
+
+      // give me dog
+      console.log(animals[animals.length - 1]);
+
+      // error, there is no bear // negative 1 means it does not exist; remember -1 is stil considered a truthy value
+      console.log(animals.indexOf("bear"));
+
+      // give me 0
+      console.log(animals.indexOf("parrot"));
+
+    </script>
+
+  </body>
+</html>
