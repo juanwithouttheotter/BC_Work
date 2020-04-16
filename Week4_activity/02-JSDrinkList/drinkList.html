@@ -28,6 +28,24 @@
             "Ice Latte: $6",
             "Ice Tea: $4"
         ];
+        // Using js to put the drink list into html content
+        for(i = 0; i < drinkList.length; i++){
+            var targetDiv = document.getElementById("empty-div");
+            var newDiv = document.createElement("div");
+            newDiv.setAttribute("id","caja" + i);
+            targetDiv.appendChild(newDiv);
+            newDiv.textContent = drinkList[i];
+        };
+        //Using javascript to do the same as above; instead of a for using .forEach
+        drinkList.forEach(ecaja);
+        function ecaja(item, index) {
+            var targetDiv = document.getElementById("empty-div");
+            var newDiv = document.createElement("div");
+            targetDiv.appendChild(newDiv);
+            newDiv.setAttribute("id","ecaja" + index);
+            newDiv.textContent = drinkList[index];
+        };
+
         // var div is giving each newly created div the id of box + index
         // .append the string and index from the variable div to the existing id empty-div
         // .text is inserting the drinklist item by index into the div by id
@@ -36,7 +54,7 @@
             $("#empty-div").append(div);
             $("#box" + i).text(drinkList[i]);
         };
-        
+
         //similar to the above but instead using the forEach. function ebox identifies the item and the index of drinkList
         // then performs similare to above
         drinkList.forEach(ebox);
