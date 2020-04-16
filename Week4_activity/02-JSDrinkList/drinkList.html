@@ -28,13 +28,17 @@
             "Ice Latte: $6",
             "Ice Tea: $4"
         ];
-
+        // var div is giving each newly created div the id of box + index
+        // .append the string and index from the variable div to the existing id empty-div
+        // .text is inserting the drinklist item by index into the div by id
         for (i = 0; i < drinkList.length; i++) {
             var div = '<div id="box' + i + '"></div>';
             $("#empty-div").append(div);
             $("#box" + i).text(drinkList[i]);
         };
         
+        //similar to the above but instead using the forEach. function ebox identifies the item and the index of drinkList
+        // then performs similare to above
         drinkList.forEach(ebox);
 
         function ebox(item, index) {
