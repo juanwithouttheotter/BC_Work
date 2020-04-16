@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Basic JavaScript Dump</title>
@@ -9,36 +10,40 @@
         }
     </style>
 </head>
-    <body>
-        <div id="empty-div"></div>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script type="text/javascript">
+
+<body>
+    <div id="empty-div"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
         // We are given an array that holds all of the drinks available
-    var drinkList = [
-      "Coffee: $5",
-      "Espresso: $7",
-      "Cappuccino: $6",
-      "Latte: $4",
-      "Tea: $3",
-      "Ice Coffee: $6",
-      "Ice Espresso: $8",
-      "Ice Latte: $6",
-      "Ice Tea: $4"
-    ];
-    for ( i = 0; i < drinkList.length; i++)  {
-        // document.createElement('Div');
-        // document.appendChild();
-        $('<Div>').appendChild(drinkList[i])
+        var drinkList = [
+            "Coffee: $5",
+            "Espresso: $7",
+            "Cappuccino: $6",
+            "Latte: $4",
+            "Tea: $3",
+            "Ice Coffee: $6",
+            "Ice Espresso: $8",
+            "Ice Latte: $6",
+            "Ice Tea: $4"
+        ];
+
+        for (i = 0; i < drinkList.length; i++) {
+            var div = '<div id="box' + i + '"></div>';
+            $("#empty-div").append(div);
+            $("#box" + i).text(drinkList[i]);
+        };
         
-    }
+        drinkList.forEach(ebox);
 
+        function ebox(item, index) {
+            var div = '<div id="ebox' + index + '"></div>';
+            $("#empty-div").append(div);
+            $("#ebox" + index).text(index + ":" + item);
+        };
+    </script>
 
+</body>
 
-        </script>
-    </body>
 </html>
-
-
-
-
-
