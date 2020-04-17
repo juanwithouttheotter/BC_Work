@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <title>Trigger Random </title>
+
+    <!-- Added link to the jQuery Library -->
+
+
+</head>
+
+<body>
+
+    <div class="jumbotron">
+
+        <h1 class="text-center">Generate a Random Number!</h1>
+
+        <div class="text-center">
+
+            <!-- Here we have our button for generating random numbers (#random-button) -->
+            <button id="random-button" class="btn btn-primary btn-lg">
+                <h1><span class="fa fa-question"></span></h1>
+            </button>
+
+        </div>
+
+    </div>
+
+    <h1 class="text-center" id="random-number"></h1>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        // This document.ready isn't necessary in this example... but is needed in cases where the HTML is complex.
+        // This code makes sure that the JavaScript doesn't get run until the HTML is finished loading
+        // It's useful to become familiar with now.
+
+        $(document).ready(function () {
+            $('random-button').on('click', function () {
+                var randomNumbers = [];
+                for (var i = 0; i < 9; i++){
+                    var randomNumber = Math.floor(Math.random() * 10);
+                    randomNumbers.push(randomNumber);
+                }
+
+                $('#random-number').append('<p>' + randomNumbers.join('-') + '</p>');
+
+
+            });
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -17,7 +17,7 @@
   <h3 id="grilledcheese">Grilled Cheese</h3>
   <h3 id="roastbeef">Roast Beef</h3>
 
-  <div id="image-div"></div>
+  <div id="sandwich-list"></div>
 
   <script type="text/javascript">
 
@@ -26,6 +26,9 @@
     // It's useful to become familiar with now.
 
     $(document).ready(function() {
+
+
+
 
       // VARIABLES
       // ====================================================================
@@ -40,6 +43,27 @@
       // Here we create various on "click" functions which capture the clicks
       // Inside each click event is the code to create an alert, update the counter, then show the updated count.
       // ...
+      var pbjFunction  = function() {
+        alert('I hope you are not allergic to peanuts!');
+        $('#sandwich-list').append('<li>Peanut Butter Jelly</li>');
+       
+
+      }
+      var grilledFunction  = function() {
+        alert('I hope you do not like to cut the grilled cheese!');
+        $('#sandwich-list').append('<li>Grilled Cheese</li>');
+
+      }
+      var roastFunction  = function() {
+        alert('Do not get roasted like this beef!');
+        $('#sandwich-list').append('<li>Roast Beef</li>');
+
+      }
+      
+     
+      $('#pbj').on("click",pbjFunction);
+      $('#grilledcheese').on("click",grilledFunction);
+      $('#roastbeef').on("click",roastFunction);
 
 
       // ...

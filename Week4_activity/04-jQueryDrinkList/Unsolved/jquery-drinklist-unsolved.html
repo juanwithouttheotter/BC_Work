@@ -25,6 +25,11 @@
       "Ice Tea: $4"
     ];
 
+    var cups = $('#drink-options');
+
+    for (var drink of drinkList) {
+      cups.append('<div>'+drink+'</div>');
+    }
     // Using JavaScript programmatically append each drinkList item to the "drink-options" div
     // HINT: you will need a for loop to go over each element in the list
 
