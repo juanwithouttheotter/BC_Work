@@ -8,6 +8,9 @@
   <h2>Check console to see the madness!</h2>
 
   <script>
+      // if you want to add a title to your code you can do console.log('title', this);
+      //remember this can only be used to reference and object. 
+
     var cat = {
       name: "Gus",
       color: "gray",
@@ -17,18 +20,22 @@
         console.log("inside printInfo()");
 
         // What will this print?
+        //the properties of cat
         console.log(this);
 
         // What will this print?
+        //will reference the cat object and and log the characteristics of cat.
         console.log("Name:", this.name, "Color:", this.color, "Age:", this.age);
 
         var nestedFunction = function() {
           console.log("inside nestedFunction()");
 
           // What will this print?
+          //all info in the window because it is not referencing an object
           console.log(this);
 
           // What will this print?
+          // undefined
           console.log("Name:", this.name, "Color:", this.color, "Age:", this.age);
         };
 

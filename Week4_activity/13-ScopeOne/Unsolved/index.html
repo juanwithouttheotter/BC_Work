@@ -16,7 +16,6 @@
 
       // what is the scope of this function and the scope of y?
       function inside(y) {
-
         console.log(x + y);
       }
 
@@ -25,13 +24,17 @@
 
     // what is happening here?
     var insideOut = outside();
-
+    //you calling the the function is context. inside out is now equal to the function outside.
+    //So when invoking insideOut, 2 is sent into the outside function which then gives x aka 1 and y 2 added together equates to 3;
+    //1 + y
     // What does this return?
     insideOut(2);
+    //3
 
     // Uncaught ReferenceError: x is not defined.
     // How does insideOut have access to x?
     console.log("The value of 'x' outside 'outside()' is: " + x);
+    // insideOut does not have access to x, only the output of 1+y, which then inputs 2 making it 1+2;
 
   </script>
 
