@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>House Builder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .house {
+            font-size: 100px;
+            text-align: center;
+            min-height: 278px;
+        }
+        .hide {
+            display: none;
+        }
+        a.disabled{
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>House Builder <a class="btn btn-danger hide" id="newHouse">New House</a></h2>
+        <div class="row">
+            <div class="col-md-3">
+                <a class="btn btn-primary" id="getWorkersBtn">Get Workers</a>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-warning hide" id="digDirtBtn">Digger: Dig Dirt</a>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-info hide" id="buildBricksBtn">Bricker: Build Bricks</a>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-success hide" id="buildHouseBtn">Build House</a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron house" id="plot"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" id="bucketCounter"></div>
+            <div class="col-md-6" id="brickCounter"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="worker.js"></script>
+</body>
+</html>

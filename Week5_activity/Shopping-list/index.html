@@ -1,0 +1,60 @@
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Shopping List Maker</title>
+</head>
+
+<body class="background">
+
+    <header class="container-fluid py-2 mb-3 header-footer text-center">
+        <div class="mx-auto">
+            <h1>Shopping List!</h1>
+        </div>
+    </header>
+
+    <main class="container mx-5">
+
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <!-- input id todo -->
+                <input type='text' class='form-control' placeholder='What needs to be done?' value=''
+                    aria-describedby='basic-addon1' id='todo' />
+                <div class='input-group-append'>
+                    <!-- span id todo-add -->
+                    <span class='input-group-text bg-primary text-white' id='todo-add'>Add Item</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- div id todo-list -->
+        <div class="input-group mb-3" id="todo-list">
+            <!-- input id todo-item
+            <input type='text' class='form-control' value='Cheese'aria-describedby='basic-addon1' id='todo-item'readonly/>
+            <div class='input-group-append'> -->
+            <!-- span id todo-delete -->
+            <!-- <span class='input-group-text bg-danger text-white todo-delete'>Delete</span>
+            </div> -->
+        </div>
+
+
+
+    </main>
+    <footer class="fixed-bottom header-footer container-fluid">
+        <div class="row thick"></div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="mr-auto col-md-4 text-center"> &copy; Copyright</div>
+            <div class="col-md-4"></div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
