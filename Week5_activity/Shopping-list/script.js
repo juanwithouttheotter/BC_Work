@@ -12,9 +12,10 @@ $(document).ready(function () {
       </div>
       `);
   }
+ 
 
 
-  
+
   if (localStorage.getItem('storeListItem') !== null) {
     var listItem = JSON.parse(localStorage.getItem('storeListItem'));
     for (todo of listItem) {
@@ -24,14 +25,27 @@ $(document).ready(function () {
     listItem = [];
   }
 
+ 
+  var countingItems = function () {
+    var numOfItems = listItem.length;
+    if (numOfItems === null || numOfItems === []) {
+      numOfItems = 0;
+    }
+    $("#countItem").html(numOfItems);
+  }
+  countingItems();
+
+
 
   $('#todo-add').on('click', function () {
     setItems();
+    countingItems();
   });
 
   $('#todo').keypress(function (event) {
     if (event.which === 13) {
       setItems();
+      countingItems();
     }
   });
 
@@ -48,11 +62,13 @@ $(document).ready(function () {
   $(document).on('click', '.todo-delete', function () {
     var valueInput = $(this).closest("div.input-group").find("input[class='form-control']").val();
     var indexOfValue = listItem.indexOf(valueInput);
-    listItem.splice(indexOfValue,1);
+    listItem.splice(indexOfValue, 1);
     var storeListItem = JSON.stringify(listItem);
     localStorage.setItem('storeListItem', storeListItem);
+    countingItems();
     $(this).closest("div.input-group").remove();
   });
+
 });
 
 
