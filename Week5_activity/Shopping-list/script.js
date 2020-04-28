@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var writeToDo = function (todo) {
     $('#todo-list').append(`
       <!-- div id todo-list -->
@@ -12,34 +12,45 @@ $(document).ready(function() {
       </div>
       `);
   }
+
+
   
-  if(localStorage.getItem('storeListItem') !== null) {
-    var retrieveListItem = JSON.parse(localStorage.getItem('storeListItem'));
-    for(todo of retrieveListItem){
+  if (localStorage.getItem('storeListItem') !== null) {
+    var listItem = JSON.parse(localStorage.getItem('storeListItem'));
+    for (todo of listItem) {
       writeToDo(todo);
-    } 
-  }else{
-    var listItem = [];
+    }
+  } else {
+    listItem = [];
   }
-  $('#todo-add').on('click', function(){
+
+
+  $('#todo-add').on('click', function () {
     setItems();
   });
 
   $('#todo').keypress(function (event) {
     if (event.which === 13) {
       setItems();
-  }});
+    }
+  });
 
-  var setItems = function() {
+  var setItems = function () {
     var todo = $('#todo').val();
     writeToDo(todo);
     listItem.push(todo);
     var storeListItem = JSON.stringify(listItem);
-    localStorage.setItem('storeListItem',storeListItem);
+    localStorage.setItem('storeListItem', storeListItem);
     todo = $('#todo').val('');
-    }
+  }
+
 
   $(document).on('click', '.todo-delete', function () {
+    var valueInput = $(this).closest("div.input-group").find("input[class='form-control']").val();
+    var indexOfValue = listItem.indexOf(valueInput);
+    listItem.splice(indexOfValue,1);
+    var storeListItem = JSON.stringify(listItem);
+    localStorage.setItem('storeListItem', storeListItem);
     $(this).closest("div.input-group").remove();
   });
 });
