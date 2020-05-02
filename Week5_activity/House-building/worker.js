@@ -39,6 +39,36 @@ $(document).ready(function() {
 
 
         }
+        
+
+// keeps track for the blueprint (house array)
+    // keep track of which part of the house they are building (optional)
+    // keep track of the remainder of bricks
+    // function to build the house,
+        // take the number of bricks divided by 100
+        // for every 100th brick wright a letter to the plot
+        var carpenter ={
+            bricks: 0,
+            blueprint: ['H','O','U','S','E'],
+            word: '',
+            buildHouse: function(brickMaker){
+                this.bricks = this.bricks + brickMaker.stack();
+                var partOfHouse = Math.floor(bricks / 100);
+                for (var i = 0; i < partOfHouse; i++){
+                    if (this.blueprint.length !== 0){
+                        var letter = this.blueprint.shift();
+                        this.word = this.word + letter;
+                        $('#plot').text(this.word);
+                    } else {
+                        $('#tearDownHouse').show();
+                    }
+                }
+                this.bricks = this.bricks - 
+
+            }
+
+
+        }
 
 
 
