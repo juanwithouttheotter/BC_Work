@@ -12,6 +12,8 @@
   <div class="wind"></div>
   <div class="humidity"></div>
   <div class="temp"></div>
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
     // This is our API key. Add your own API key between the ""
@@ -25,6 +27,20 @@
       url: queryURL,
       method: "GET"
     }).then(function(response) {
+      console.log(response.main.humidity);
+      console.log(response.name);
+      console.log(response.wind);
+      console.log(response.main.temp);
+
+      var tempFahrenheit = Math.max((response.main.temp - 273.15) * 1.80 + 32).toFixed(2);
+      console.log(tempFahrenheit);
+
+
+      $(".city").html("City: " +response.name);
+      $(".wind").html('Wind: speed: ' + response.wind.speed + 'mph degrees: ' + response.wind.deg);
+      $(".humidity").html("Humidity: " + response.main.humidity + '%' );
+      $(".temp").html("Temperature: " + tempFahrenheit + '&deg F');
+      
 
       // Create CODE HERE to Log the queryURL
       // Create CODE HERE to log the resulting object

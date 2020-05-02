@@ -14,6 +14,26 @@
   <div class="temp"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
+
+  $.ajax({
+      //https://openweathermap.org/current#parameter
+      //must get key 
+    url:"https://api.openweathermap.org/data/2.5/weather?zip=60033,us&appid=",
+    method: "GET"
+
+  }).then(function(response){
+    
+    var tempFahrenheit = Math.max((response.main.temp - 273.15) * 1.80 + 32).toFixed(2);
+      console.log(tempFahrenheit);
+
+
+      $(".city").html(`<h1>${response.name}</h1>`);
+      
+      $(".wind").html(`<div> Wind: speed:  ${response.wind.speed}mph, degree: ${response.wind.deg}`);
+      $(".humidity").html("Humidity: " + response.main.humidity + '%' );
+      $(".temp").html("Temparature: " + tempFahrenheit + '&deg F');
+      
+  });
     // Things to accomplish:
     // Get an API Key from OpenWeatherMap API
     // Create an AJAX call to retrieve data Log the data in console

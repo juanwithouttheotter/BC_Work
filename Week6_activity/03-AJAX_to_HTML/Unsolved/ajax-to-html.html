@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="utf-8">
   <title>Favorite Movies</title>
@@ -32,20 +33,39 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
+    // console log  date, write the data to the screen, then put proper info in tables  using jquery. 
     // The below code fills in the first row of the table
-    var movie = "Mr. Nobody";
-    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
 
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
+    var moviepicker = function (movie) {
+      var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function (response) {
+
+        var row = $('<tr>')
+        var title = $('<td>').text(response.Title);
+        var year = $('<td>').text(response.Year);
+        var actors = $('<td>').text(response.Actors);
+        row.append(title, year, actors);
+        $('tbody').append(row);
+      });
+    }
+
+    for (var movie of ['Mr.Nobody', 'The+Incredibles', 'Forrest+Gump','Her','The+Invincibles']) {
+      moviepicker(movie);
+    }
+
+
+
+
+
 
       // Create and save a reference to new empty table row
       // Create and save references to 3 td elements containing the Title, Year, and Actors from the AJAX response object
       // Append the td elements to the new table row
       // Append the table row to the tbody element
-    });
+
 
     // Repeat the above logic to add rows for two more movies of your choice
 
