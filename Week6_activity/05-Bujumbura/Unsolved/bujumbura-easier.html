@@ -20,13 +20,14 @@
     var APIKey = "";
 
     // Here we are building the URL we need to query the database
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Bujumbura,Burundi&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=chicago,il,us&appid=" + APIKey;
 
     // We then created an AJAX call
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
+      console.log(response);
       console.log(response.main.humidity);
       console.log(response.name);
       console.log(response.wind);
