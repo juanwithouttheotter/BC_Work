@@ -10,14 +10,17 @@ const moviePatrons = [
 // 1.
 
 // forEach is a functional way of iterating through an array without a for-loop
-
+  //only works on array types
+  //.forEach(value,index); is how it returns the information
 moviePatrons.forEach(patron => console.log(patron.age));
 
 // 2.
 
 // Filter returns a new array containing only elements whose callback returns a truthy value
+  //only works on array types
+  // will retun patrons whos age is above 17
 
-const canWatchRatedR = moviePatrons.filter(function(patron) {
+const canWatchRatedR = moviePatrons.filter(function (patron) {
   return patron.age > 17;
 });
 
@@ -30,6 +33,7 @@ console.log(canWatchRatedR);
 
 const cardedMoviePatrons = moviePatrons.map(patron => {
   // Copy the object being iterated over
+    // ... is a spread
   const pObj = { ...patron };
   // Do everything else the same
   if (pObj.age >= 17) {
@@ -40,7 +44,7 @@ const cardedMoviePatrons = moviePatrons.map(patron => {
   // Be sure to return the new obj, not the parameter
   return pObj;
 });
-
+//another way of writing and if statement is ternary return condition ? statement : return
 console.log("Movie Patrons: ")
 console.log(moviePatrons);
 
