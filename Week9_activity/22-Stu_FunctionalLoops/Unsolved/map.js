@@ -4,8 +4,21 @@ const doubledArray = originalArray.map(function(data) {
   return data * 2;
 });
 
+const tripledArray = originalArray.map(function(data){
+  return data * 3;
+});
+
+const oddOrEven = originalArray.map(function(data){
+  if(data %2 === 0){
+    data = "even";
+  }else{ data = "odd";
+  }
+  return data;
+});
 console.log(doubledArray);
 console.log(originalArray);
+console.log(tripledArray);
+console.log(oddOrEven);
 
 // Complete the following
 
