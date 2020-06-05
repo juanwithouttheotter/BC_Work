@@ -8,6 +8,7 @@ const tripledArray = originalArray.map(function(data){
   return data * 3;
 });
 
+const oddOrEvenShort = originalArray.map(num => (num % 2 === 0 ? "even" : "odd"));
 const oddOrEven = originalArray.map(function(data){
   if(data %2 === 0){
     data = "even";
@@ -15,11 +16,12 @@ const oddOrEven = originalArray.map(function(data){
   }
   return data;
 });
+
 console.log(doubledArray);
 console.log(originalArray);
 console.log(tripledArray);
 console.log(oddOrEven);
-
+console.log(oddOrEvenShort);
 // Complete the following
 
 // 1. A map that triples the originalArray and sets the result equal to a new `tripledArray` array

@@ -18,11 +18,11 @@ const isPrime = num => {
   }
   return num !== 1;
 };
-const more5 = num => {
-  if (num > 5) {
-    return true;
-  }
-};
+// const more5 = num => {
+//   if (num > 5) {
+//     return true;
+//   }
+// };
 
 // Complete the following
 
@@ -36,7 +36,7 @@ const more5 = num => {
 const primeArray = originalArray.filter(isPrime);
 console.log(primeArray);
 
-const moreThan5Array = originalArray.filter(more5);
+const moreThan5Array = originalArray.filter(num => num > 5);
 console.log(moreThan5Array);
 
 
