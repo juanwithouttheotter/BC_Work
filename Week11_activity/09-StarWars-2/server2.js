@@ -1,12 +1,12 @@
 // Dependencies
 // ===========================================================
-var express = require("express");
+const express = require("express");
 
-var app = express();
-var PORT = 3000;
+const app = express();
+const PORT = 3000;
 
 // Data
-var characters = [{
+const characters = [{
   routeName: "yoda",
   name: "Yoda",
   role: "Jedi Master",
@@ -19,7 +19,7 @@ var characters = [{
   age: 200,
   forcePoints: 1200
 }, {
-  routeName: "obiwankenobi",
+  routeName: "obi",
   name: "Obi Wan Kenobi",
   role: "Jedi Knight",
   age: 60,
@@ -33,7 +33,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/:character", function(req, res) {
-  var chosen = req.params.character;
+  const chosen = req.params.character;
 
   // What does this log?
   console.log(chosen);
