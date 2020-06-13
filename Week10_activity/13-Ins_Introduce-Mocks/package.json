@@ -1,7 +1,6 @@
 {
   "name": "06-ins_introduce-mocks",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -10,5 +9,10 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^24.9.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [],
+  "description": ""
 }
