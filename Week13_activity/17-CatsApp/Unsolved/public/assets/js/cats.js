@@ -20,7 +20,7 @@ $(function() {
       }
     );
   });
-
+ 
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
@@ -37,6 +37,18 @@ $(function() {
     }).then(
       function() {
         console.log("created new cat");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+  $(".delete").on("click", function(event){
+    const id = $(this).data("id");
+    $.ajax("/api/cats/" + id, {
+      type: "DELETE" 
+    }).then(
+      function() {
+        console.log("bye,kitty!");
         // Reload the page to get the updated list
         location.reload();
       }

@@ -44,5 +44,16 @@ router.put("/api/cats/:id", function(req, res) {
   });
 });
 
+router.delete("/api/cats/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+  console.log("condition", condition);
+  cat.delete(condition, function(result) {
+    if (condition === null) {
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  })
+});
 // Export routes for server.js to use.
 module.exports = router;
