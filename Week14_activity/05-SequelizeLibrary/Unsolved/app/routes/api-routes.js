@@ -22,12 +22,16 @@ module.exports = function(app) {
   });
 
   // Add sequelize code to get all books of a specific genre and return them as JSON
-  app.get("/api/genre/:genre", function(req, res) {
-
+  app.get("/api/genre/:genre", async (req, res) => {
+    const result = await Book.findAll({
+      where: {
+        title: req.params.title
+      }
+    })
   });
 
   // Add sequelize code to get all books from a specific author and return them as JSON
-  app.get("/api/author/:author", function(req, res) {
+  app.get("/api/author/:author", async (req, res) {
 
   });
 

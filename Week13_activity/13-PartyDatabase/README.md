@@ -37,3 +37,6 @@
   * Console log all the client names.
   * Console log all the parties that have a party-type of grown-up.
   * Console log all the clients and their parties.
+* this should be written only using 3 functions bonus if you can do it in 1.
+
+* there should be NO hard-coded SQL statements (i.e. `SELECT * FROM );

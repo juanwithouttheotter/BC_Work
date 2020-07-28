@@ -12,6 +12,9 @@ var connection = require("../config/connection.js");
 module.exports = function(app) {
 
   // Get all chirps
+  app.get('/api/all')
+
+  
 
 
   // Add a chirp
