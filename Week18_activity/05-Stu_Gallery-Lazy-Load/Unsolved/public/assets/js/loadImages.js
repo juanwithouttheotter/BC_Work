@@ -10,6 +10,25 @@ function createEl(htmlString = "", className) {
 
 function initLazyImages() {
   // Enter your lazy loading code here
+  const lazyImages = document.querySelectorAll('.card-img-top');
+
+  function onIntersection(imageEntities) {
+    // console.log('onIntersection');
+    // console.log(imageEntities);
+    imageEntities.forEach(image => {
+      if (image.isIntersecting) {
+        //unobserve stops observing the element *which is specific image
+        observer.unobserve(image.target);
+        // takes the src from data-src(used in js not so much html) and sets it to the src (used by the image Element);
+        image.target.src = image.target.dataset.src;
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(onIntersection);
+  
+  lazyImages.forEach(image => observer.observe(image));
+
 }
 
 function loadImages() {
@@ -25,7 +44,7 @@ function createCards(data) {
   let lastRow;
   const row = createEl("div", "row");
 
-  return data.forEach(function(image, index) {
+  return data.forEach(function (image, index) {
     const col = createEl("div", "col-md-4 mt-4");
     col.appendChild(createCard(image));
     if (index % 3 === 0) {
@@ -43,7 +62,7 @@ function createCard(image) {
   const imageContainer = createEl("div", "card__image-container");
   const img = createEl("img", "card-img-top card__image--cover");
   // Enter your additional code here
-  img.setAttribute("src", image.image);
+  img.setAttribute("data-src", image.image);
   img.setAttribute("alt", image.description);
 
   const cardBody = createEl("div", "card-body");
@@ -111,7 +130,7 @@ function updateRating(event) {
     headers: {
       "Content-Type": "application/json"
     }
-  }).then(function() {
+  }).then(function () {
     loadImages();
   });
 }
