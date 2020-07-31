@@ -2,12 +2,15 @@
 
 ## Things that affect performance
 * Distance
+    * the physical distance the information needs to travel
 * (file size) The size of the application
     * The web app is temporarily saved on your device.
 * Complexity
     * how the code is written
         * time complexity
+            * the number of times that something is running 
         * space (memory) complexity 
+            * how much working storage an algorithm needs 
 
 ## Ways to increase performance
 * reduce the distance to users
@@ -55,3 +58,33 @@
 ## Lazy Loading
 * intersection observer
     * gives you different commands 
+
+## PWA (progressive web apps)
+* web applications that use web browser APIs to enhance user experience
+* Linkability
+    * when users are able to create a link for your application vs having to download an app.
+* built and enhanced with browser api to deliver native-like "capabilities, reliability, and installability" 
+* Works for every user regardless of browser choice
+
+* Manifest
+    * required for a PWA
+    * inside we find these of many
+        * short_name --> name presented if there is not enough space to present full name
+        * name --> found on top of browser
+        * icon --> varying sizes
+        * start_url --> tell where the project starts
+        * background_color --> color for the app, white, darkmode, 
+        * display --> how is this going to display on the device. Standalone = looks and feels like a standalon application. 
+        * 
+
+## Service worker
+* files_to_cache: 
+    * and array of all of the files that need to be cached
+
+* cache_name: 
+    * which version is used, static
+* data_cache_name:  
+    * data version cache used
+* Self
+    * refers to the entire file itself, in our case is the service-worker.js
+    * 
