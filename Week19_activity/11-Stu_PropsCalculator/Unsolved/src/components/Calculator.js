@@ -5,7 +5,9 @@ import React from "react";
 // Math should accept 3 props
 // num1, operator, and num2
 // Math should return a span tag displaying the result e.g.  19 + 341 = 360
-function Calculator() {
+
+function Calculator(props) {
+  console.log(props)
   return (
     <div>
       <p>19 + 341 = ?</p>
@@ -17,3 +19,4 @@ function Calculator() {
 }
 
 export default Calculator;
+
