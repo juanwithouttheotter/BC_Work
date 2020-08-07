@@ -1,4 +1,5 @@
 import React from "react";
+import CardBody from "./cardBody";
 
 class Counter extends React.Component {
   state = {
@@ -9,18 +10,21 @@ class Counter extends React.Component {
     this.setState({ count: this.state.count + 1 });
   };
 
+  handleDecrement = () => {
+    this.setState({ count: this.state.count - 1 });
+  };
+
   render() {
     return (
       <div className="card text-center">
         <div className="card-header bg-primary text-white">
           Click Counter!
         </div>
-        <div className="card-body">
-          <p className="card-text">Click Count: {this.state.count}</p>
-          <button className="btn btn-primary" onClick={this.handleIncrement}>
-            Increment
-          </button>
-        </div>
+        <CardBody 
+        count={this.state.count}
+        increment={this.handleIncrement}
+        decrement={this.handleDecrement}
+        ></CardBody>
       </div>
     );
   }
