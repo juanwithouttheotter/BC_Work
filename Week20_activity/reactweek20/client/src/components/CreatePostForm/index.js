@@ -1,9 +1,6 @@
 import React from "react";
-import {ADD_POST} from "../../utils/actions";
-import {useStoreContext} from "../../utils/GlobalState";
 
 const CreatePostForm = () => {
-  const [_, dispatch] = useStoreContext();
   const handleSubmit = e => {
     e.preventDefault();
   };
@@ -21,7 +18,7 @@ const CreatePostForm = () => {
         <input className="form-control mb-5" required placeholder="Title" />
         <textarea className="form-control mb-5" required placeholder="Body" />
         <input className="form-control mb-5" placeholder="Screen name" />
-        <button className="btn btn-success mt-3 mb-5" type="submit" onClick={()=> dispatch({type: ADD_POST})}>
+        <button className="btn btn-success mt-3 mb-5" type="submit">
           Save Post
         </button>
       </form>
