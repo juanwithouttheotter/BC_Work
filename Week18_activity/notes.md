@@ -88,3 +88,45 @@
 * Self
     * refers to the entire file itself, in our case is the service-worker.js
     * 
+
+# Webpack!
+
+* takes in the packages such as react, bootstrap, ect. and saves tehm locally via npm packages. 
+* bundles all of you source code (src), to optimize UX and serve it as distribution dir (dist) in a bundle.js to be used from the html.
+
+* dev dependecies
+    * webpack
+    * webpack-cli (command line interface)
+* you don't want to install webpack globally because projects can have conflicting versions.
+    * npm install -g (installs globally, be weary about it)
+* package json build webpack includes --watch
+    * looks for changes in any of the resolved files. 
+* plugins: [new NameOfThePlug()]
+
+## activity 19
+* *Functional Programing*
+    * for things that are not real work related and Object oriented programming would to work. 
+    * making the distinction between the two is important to know. 
+
+* Import {function/method} from "./file";
+    * bring in (imports) the specific function from an outside file.
+
+* in webpack config
+    * new module: that contains rules that are presented in an array []
+        * test: code on line 11, says find all js files
+        * exclude: node_modules
+        * use: 
+            * Babel
+                * takes all of the code and compiles it to the lowest common denominator of the language ex. ES5 from ES6;
+
+
+# REACT
+* allows for testable front end because of the  component
+* helps bridge the gap between designers and developers
+* allows for reusable code (components)
+* React only manipulates the virtual DOM. 
+    * compares the virtual DOM and the real DOM, and only updates the components that are changed
+        * this helps avoid isues of reloading the entire DOM
+
+* React and React Native are not the same 
+* with React we build a SPA Single  Page Application, that continueously uses the index page and is being altered by react

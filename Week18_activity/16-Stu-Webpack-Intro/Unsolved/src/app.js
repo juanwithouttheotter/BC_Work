@@ -1,3 +1,6 @@
+//require is from express, so webpack is allowing us to use require with our files like we do in the backend
+const calculations = require("./calculations");
+
 const priceEl = document.getElementById("price");
 const balanceEl = document.getElementById("balance");
 const expenseEl = document.getElementById("expense");
@@ -13,10 +16,14 @@ function addToList(name, price) {
 function submit(e) {
   e.preventDefault();
   addToList(expenseEl.value, priceEl.value);
+  balanceEl.innerHTML -= priceEl.value;
+  calculations.newBudget(balanceEl.innerHTML, priceEl.value);
 }
 
 function reset(e) {
   e.preventDefault();
+  balanceEl.innerHTML = "2000";
+  expensesListEl.innerHTML = '';
 }
 
 submitBtn.onclick = submit;
